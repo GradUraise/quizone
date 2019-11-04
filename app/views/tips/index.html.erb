@@ -1,0 +1,56 @@
+<div class="col-10 offset-1">
+    <ul>
+        <li>Here's a helpful Ruby Tutorial site - <a href="http://rubylearning.com/" target="_blank">Ruby Learning</a></li>
+        <li>Ruby documentation can be found here - <a href="https://ruby-doc.org/" target="_blank">Ruby Docs</a></li>
+        <li>Need tips? Look here - <a href="http://www.caliban.org/ruby/rubyguide.shtml#tips" target="_blank">Ruby Tips</a></li>
+    </ul>
+</div>
+
+<br />
+<hr>
+
+<div class="col-12">
+    <h1>Coding Tips</h1>
+    <h3><%= @tip.codingtip %></h3>
+    <hr>
+</div>
+
+
+<div class="col-12 text-center">
+    <!-- Button trigger modal -->
+    <%= link_to 'Add your own coding tip', '#', data: {toggle: 'modal', target: '#myModal'} %>
+</div>
+
+    <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Contribute Your Tip</h4>
+        </div>
+        <%= simple_form_for Tip.new do |f| %>
+            <div class="modal-body">
+            <%= f.input :codingtip, label: "What advice do you want to add??", placeholder: "Don't Repeat Yourself." %>
+            </div>
+        
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <%= f.submit 'Add tip', class: 'btn btn-danger' %>
+            </div>
+        <% end %>
+    </div>
+    </div>
+</div>
+
+<br />
+
+<div class="col-12">
+    <h2>Happy coding!</h2>
+</div>
+
+<div class="col-sm-4">
+    <h6>Designed by <a href="https://melissaroetker.netlify.com/" style="color:#6734eb">Melissa Roetker</a></h6>
+</div>
